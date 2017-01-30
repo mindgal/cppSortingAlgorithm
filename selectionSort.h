@@ -1,11 +1,10 @@
 #ifndef SELECTIONSORT_H_
 #define SELECTIONSORT_H_
 
-
 template<typename T>
 void swap(T * const element1Ptr, T * const element2Ptr)
 {
-    int hold = *element1Ptr;
+    T hold = *element1Ptr;
     *element1Ptr = *element2Ptr;
     *element2Ptr = hold;
 }

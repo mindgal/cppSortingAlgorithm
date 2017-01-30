@@ -3,9 +3,17 @@
 
 #include <iomanip>
 #include <iostream>
+#include <cstdlib>
 
-void fillRandomArray(int array[], const int size);
-void fillRandomArray(float array[], const int size);
+template<typename T>
+void fillRandomArray(T array[], const int size)
+{
+    srand(time(0));
+
+    for (int i = 0; i < size; i++) {
+        array[i] = static_cast<float> (rand()) / static_cast <float> (RAND_MAX / 1000.0);
+    }
+}
 
 template<typename T>
 bool checkSorted(const T array[], const int size)
@@ -22,7 +30,7 @@ template<typename T>
 void printArray(const T array[], const int size)
 {
     for (int i = 0; i < size; i++) {
-        std::cout << std::setw(3) << array[i] << "  ";
+        std::cout << std::setw(10) << array[i] << "  ";
         if((i + 1) % 10 == 0) {
             std::cout << '\n';
         }

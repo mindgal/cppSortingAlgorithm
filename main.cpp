@@ -8,7 +8,7 @@ int main()
 {
     const int arraySize = 100;
 
-    float array[arraySize] = {};
+    double array[arraySize] = {};
 
     fillRandomArray(array, arraySize);
 
