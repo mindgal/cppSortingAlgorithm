@@ -4,20 +4,13 @@
 #include "bubbleSort.h"
 #include "quicksort.h"
 
+#include "rot13.h"
+
 int main()
 {
-    const int arraySize = 100;
-
-    double array[arraySize] = {};
-
-    fillRandomArray(array, arraySize);
-
-    printArray(array, arraySize);
-
-    selectionSort(array, arraySize);
-
-    std::cout << "Is the array sorted?" << std::boolalpha << "  "<<
-            checkSorted(array, arraySize) << std::endl;
-
-    printArray(array, arraySize);
+    std::string orig("LA SCENA IN CUI IL PERSONAGGIO PRINCIPALE MUORE NON MI PIACE");
+    std::cout <<  "orig: " << orig << '\n';
+    std::string rotted = rot13(orig);
+    std::cout << "rotared13: " << rotted << '\n';
+    std::cout << "Derotated: " << rot13(rotted);
 }
